@@ -14,7 +14,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/students/**").permitAll() // Allow public access to /students/** endpoints
+                        .requestMatchers("/**").permitAll() // Allow public access to /students/** endpoints
                         .anyRequest().authenticated() // Require authentication for other endpoints
                 )
                 .csrf(csrf -> csrf.disable()) // Disable CSRF protection (if necessary for development)
